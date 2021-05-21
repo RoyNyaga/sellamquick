@@ -34,5 +34,8 @@ module Sellamquick
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Adeed lines
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
