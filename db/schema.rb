@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_215100) do
+ActiveRecord::Schema.define(version: 2021_05_22_142444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 2021_05_21_215100) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "gender"
+    t.string "location", default: ""
+    t.text "reasons_for_joining"
+    t.boolean "is_active", default: true
+    t.datetime "last_login"
+    t.datetime "last_activity_date"
+    t.string "age_range", default: ""
+    t.string "username"
+    t.string "slug"
+    t.boolean "is_suspended", default: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["phone"], name: "index_users_on_phone", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
