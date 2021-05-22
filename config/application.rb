@@ -36,6 +36,6 @@ module Sellamquick
     config.generators.system_tests = nil
 
     # Adeed lines
-    config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('lib/json_web_token.rb')
   end
 end

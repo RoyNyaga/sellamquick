@@ -1,7 +1,10 @@
 class User 
-  attr_reader :name 
 
-  def test 
-    
+  def initialize(phone, password)
+    @phone = phone 
+    @password = password
   end 
+
+  attr_accessor :phone, :password
+  
 end 
