@@ -24,17 +24,17 @@ ActiveRecord::Schema.define(version: 2021_05_24_222445) do
   end
 
   create_table "interests", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "categories_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["categories_id"], name: "index_interests_on_categories_id"
-    t.index ["users_id"], name: "index_interests_on_users_id"
+    t.index ["category_id"], name: "index_interests_on_category_id"
+    t.index ["user_id"], name: "index_interests_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
     t.string "brand"
-    t.bigint "categories_id", null: false
+    t.bigint "category_id", null: false
     t.text "description", default: ""
     t.string "used_state"
     t.boolean "has_problem", default: false
@@ -46,11 +46,11 @@ ActiveRecord::Schema.define(version: 2021_05_24_222445) do
     t.integer "promotion_price"
     t.string "available_colors", default: ""
     t.boolean "is_available", default: true
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["categories_id"], name: "index_products_on_categories_id"
-    t.index ["users_id"], name: "index_products_on_users_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 2021_05_24_222445) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "interests", "categories", column: "categories_id"
-  add_foreign_key "interests", "users", column: "users_id"
-  add_foreign_key "products", "categories", column: "categories_id"
-  add_foreign_key "products", "users", column: "users_id"
+  add_foreign_key "interests", "categories"
+  add_foreign_key "interests", "users"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "users"
 end

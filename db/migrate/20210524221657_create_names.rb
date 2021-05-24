@@ -2,7 +2,7 @@ class CreateNames < ActiveRecord::Migration[6.1]
   def change
     create_table :products do |t|
       t.string :brand
-      t.references :categories, null: false, foreign_key: true
+      t.references :category, null: false, foreign_key: true
       t.text :description, default: ""
       t.string :used_state
       t.boolean :has_problem, default: false
@@ -14,7 +14,7 @@ class CreateNames < ActiveRecord::Migration[6.1]
       t.integer :promotion_price
       t.string :available_colors, default: ""
       t.boolean :is_available, default: true
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
