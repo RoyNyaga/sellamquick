@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_222445) do
   end
 
   create_table "products", force: :cascade do |t|
+    t.string "name"
     t.string "brand"
     t.bigint "category_id", null: false
     t.text "description", default: ""
