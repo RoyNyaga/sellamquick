@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_220439) do
+ActiveRecord::Schema.define(version: 2021_05_24_221657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,27 @@ ActiveRecord::Schema.define(version: 2021_05_24_220439) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "brand"
+    t.bigint "categories_id", null: false
+    t.text "description", default: ""
+    t.string "used_state"
+    t.boolean "has_problem", default: false
+    t.string "problem_statement"
+    t.integer "price"
+    t.boolean "is_arguable", default: false
+    t.boolean "is_on_promotion", default: false
+    t.string "promotion_end_date", default: ""
+    t.integer "promotion_price"
+    t.string "available_colors", default: ""
+    t.boolean "is_available", default: true
+    t.bigint "users_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["categories_id"], name: "index_products_on_categories_id"
+    t.index ["users_id"], name: "index_products_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +66,6 @@ ActiveRecord::Schema.define(version: 2021_05_24_220439) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "products", "categories", column: "categories_id"
+  add_foreign_key "products", "users", column: "users_id"
 end
