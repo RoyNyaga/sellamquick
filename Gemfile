@@ -58,3 +58,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 gem 'jwt', '~> 2.2', '>= 2.2.3'
 gem 'simple_command', '~> 0.1.0'
+gem 'react-rails', '~> 2.6', '>= 2.6.1'
