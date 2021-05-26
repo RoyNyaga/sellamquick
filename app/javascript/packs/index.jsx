@@ -5,10 +5,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../components/App'
+import { Provider } from 'react-redux'
+import store from '../redux/store'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App name="React" />,
+    <Provider store={store}>
+      <App name="React" />
+    </Provider>,
     document.body.appendChild(document.createElement('div')),
   )
 })
