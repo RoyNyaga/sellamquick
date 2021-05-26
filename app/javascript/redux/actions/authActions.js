@@ -1,3 +1,5 @@
+
+
 const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
 
 
@@ -6,6 +8,4 @@ const createUserSuccessAction = user => ({
   user,
 });
 
-export {
-  createUserSuccessAction
-};
+export default createUserSuccessAction
