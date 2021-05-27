@@ -8,4 +8,7 @@ const createUserSuccessAction = user => ({
   user,
 });
 
-export default createUserSuccessAction
+export {
+  createUserSuccessAction,
+  CREATE_USER_SUCCESS,
+} 

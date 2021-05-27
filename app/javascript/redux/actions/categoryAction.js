@@ -1,8 +1,11 @@
-const GET_CATEGORY = "GET_CATEGORY";
+const GET_CATEGORIES = "GET_CATEGORIES";
 
 const getCategoryAction = (categories) => ({
-  type: GET_CATEGORY,
+  type: GET_CATEGORIES,
   categories
 })
 
-export default getCategoryAction;
+export {
+  getCategoryAction,
+  GET_CATEGORIES,
+}
