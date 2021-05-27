@@ -1,10 +1,10 @@
-import GET_CATEGORIES from "../actions/categoryAction"
+import {GET_CATEGORIES} from "../actions/categoryAction"
 
 const initailState = {
   categories: []
 }
 
-const categoryReducer = (state = initailState, action) => {
+const CategoryReducer = (state = initailState, action) => {
   switch (action.type){
     case GET_CATEGORIES:
       return {
@@ -15,5 +15,5 @@ const categoryReducer = (state = initailState, action) => {
   }
 }
 
-export default categoryReducer;
+export default CategoryReducer;
 

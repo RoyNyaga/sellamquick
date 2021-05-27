@@ -1,4 +1,4 @@
-import CREATE_USER_SUCCESS from "../actions/authActions"
+import {CREATE_USER_SUCCESS} from "../actions/authActions"
 
 const initailState = {
   user: '',
