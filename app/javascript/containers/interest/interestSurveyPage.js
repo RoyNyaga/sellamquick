@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 class InterestSurveyPage extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +8,7 @@ class InterestSurveyPage extends Component {
   render() { 
     return (
       <div>
-        <h1>hello this thing is working</h1>
+        <h1 className="bg-danger">hello this thing is working</h1>
       </div>
     );
   }
