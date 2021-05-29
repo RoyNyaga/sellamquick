@@ -3,21 +3,21 @@ import styled from "styled-components"
 
 const Navbar = () => {
   return (
-  <div>
+  <NavWrapper>
     <span>Home</span>
     <span>About</span>
     <span>Account</span>
     <span>Services</span>
-
-  </div>
+  </NavWrapper>
   );
 }
 
 const NavWrapper = styled.div`
   padding: 10px;
-  background: black;
+  background-color: #333333;
   display: flex;
   color: white;
+  justify-content: space-between;
 `
  
 export default Navbar;
