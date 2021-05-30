@@ -12,7 +12,10 @@ class InterestSurveyPage extends Component {
     return (
       <div>
         <Navbar/>
-        <div className="interest-page-content">
+        <div className="interest-page-content container">
+        <h1>this is a header tag</h1>
+        <p>this is sample text, this sample text, this is sample text, this is sample text, this is sample text</p>
+
           <div className="intered-category">
             <h4>selected categories</h4>
             <div className="interested-row row">
