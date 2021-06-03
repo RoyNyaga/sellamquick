@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # categories 
   get "/all-gategories", to: "categories#category_list"
 
+  get "", to "ActiveStorage::disk#show"
 
 
   get '/*path' => 'pages#index'
