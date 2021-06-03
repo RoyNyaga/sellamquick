@@ -9,7 +9,7 @@ export default function Routing(){
     <Router>
       <Switch>
         <Route path="/" exact component={Homepage} />
-        <Route path="/user-interest-survey" exact component={InterestSurveyPage} />
+        <Route path="/w/user-interest-survey" exact component={InterestSurveyPage} />
       </Switch>
     </Router>
   )
