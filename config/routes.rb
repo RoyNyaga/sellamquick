@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   mount RailsAdmin::Engine => '/admin-dashboard', as: 'rails_admin'
   devise_for :admins
   root 'pages#index'
@@ -9,11 +9,8 @@ Rails.application.routes.draw do
     namespace :v1 do 
       # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
       post 'authenticate', to: 'authentication#authenticate'
-    
       # categories 
-      get "/all-gategories", to: "categories#category_list"
-      
+      get "/all-categories", to: "categories#category_list"
     end 
   end
-
 end
