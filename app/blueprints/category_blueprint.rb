@@ -3,6 +3,6 @@ class CategoryBlueprint < Blueprinter::Base
 
   fields :name, :slug, :description
   field :photo do |category, options|
-    category.photo
+    url_for(category.photo)
   end
 end 
