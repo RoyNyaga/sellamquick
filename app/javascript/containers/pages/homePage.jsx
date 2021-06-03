@@ -12,7 +12,7 @@ export default function Homepage(){
         </p>
         <hr className="my-4" />
         <Link
-          to="/user-interest-survey"
+          to="/w/user-interest-survey"
           className="btn btn-lg custom-button"
           role="button"
         >
