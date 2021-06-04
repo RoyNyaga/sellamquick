@@ -29,10 +29,9 @@ class InterestSurveyPage extends Component {
       <div>
         <Navbar/>
         <div className="interest-page-content container">
-        <h1>this is a header tag</h1>
-        <p>this is sample text, this sample text, this is sample text, this is sample text, this is sample text</p>
+        <h2 className="nav-links my-5 text-center">Tell us more about the type of products you are interested in</h2>
           <div className="intered-category">
-            <h4>selected categories</h4>
+            <h4 className="nav-links my-5 text-center">Your interest</h4>
             <div className="interested-row row">
               { categories.map(cat => {
                 return <InterestCard key={cat.id} category={cat} interested={true} />
@@ -40,7 +39,7 @@ class InterestSurveyPage extends Component {
             </div>
           </div>
           <div className="uninterested-category">
-            <h4>sellect an interest</h4>
+            <h4 className="nav-links my-5 text-center">Categories you may be interested in</h4>
             <div className="interested-row row">
               {/* <InterestCard interested={false}/> */}
             </div>

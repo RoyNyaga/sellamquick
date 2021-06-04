@@ -6,4 +6,7 @@ class CategoryBlueprint < Blueprinter::Base
   field :photo do |category, options|
     Rails.application.routes.url_helpers.url_for(category.photo)
   end
+  field :product_quantity do |category, option|
+    category.products.count
+  end 
 end 

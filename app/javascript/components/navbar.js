@@ -4,10 +4,10 @@ import styled from "styled-components"
 const Navbar = () => {
   return (
   <NavWrapper>
-    <span>Home</span>
-    <span>About</span>
-    <span>Account</span>
-    <span>Services</span>
+    <span className="nav-links">Home</span>
+    <span className="nav-links">About</span>
+    <span className="nav-links">Account</span>
+    <span className="nav-links">Services</span>
   </NavWrapper>
   );
 }

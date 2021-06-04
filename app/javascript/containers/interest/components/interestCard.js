@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ImgOne from "../../../assets/one.png"
 
 const InterestCard = ({interested, category}) => {
-  const { id, photo, name, description, slug } = category;
+  const { id, photo, name, description, slug, product_quantity } = category;
 
   const toggleDisappear  = (event) => {
     const button = document.querySelector(`#${slug}`);
@@ -22,7 +22,7 @@ const InterestCard = ({interested, category}) => {
         <img src={photo} alt="missing-photo"/>
         { displayType() }
         <div className="card-footer d-flex justify-content-between align-items-center py-0 px-1">
-          <p>{name}</p><p className="number bg-dark-color">2</p>
+          <p>{name}</p><p className="number bg-dark-color">{product_quantity}</p>
         </div>
       </div>
     </Wrapper>
