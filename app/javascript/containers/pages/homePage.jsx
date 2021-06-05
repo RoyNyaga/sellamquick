@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import routeLookUp from "../../routes/routeLookUp";
 
 export default function Homepage(){
   return(
@@ -12,7 +13,7 @@ export default function Homepage(){
         </p>
         <hr className="my-4" />
         <Link
-          to="/w/user-interest-survey"
+          to={routeLookUp.interestSurveyPage}
           className="btn btn-lg custom-button"
           role="button"
         >

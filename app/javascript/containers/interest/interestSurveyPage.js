@@ -39,7 +39,7 @@ class InterestSurveyPage extends Component {
             </div>
           </div>
           <div className="uninterested-category">
-            <h4 className="nav-links my-5 text-center">Categories you may be interested in</h4>
+            <h4 className="general-header-fonts-normal my-5 text-center">Categories you may be interested in</h4>
             <div className="interested-row row">
               {/* <InterestCard interested={false}/> */}
             </div>
