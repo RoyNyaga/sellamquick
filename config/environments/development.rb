@@ -1,5 +1,4 @@
 require "active_support/core_ext/integer/time"
-include Rails.application.routes.url_helpers
 
 
 Rails.application.configure do
@@ -77,8 +76,12 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
 end
 
-Rails.application.routes.default_url_options = { host: 'localhost', port: 3000 }
+Rails.application.routes.default_url_options[:host] = 'localhost'
+Rails.application.routes.default_url_options[:port] = 3000
 
+# N/B, the above setup could also be done in one line as in
+# Rails.application.routes.default_url_options = { host: 'localhost', port: 3000 }
+# But doing it this way overides any other default_url_options that has been set 
+# reasons why I had issues loading rails_admin after setting it that way
