@@ -29,9 +29,9 @@ class InterestSurveyPage extends Component {
       <div>
         <Navbar/>
         <div className="interest-page-content container">
-        <h2 className="nav-links my-5 text-center">Tell us more about the type of products you are interested in</h2>
+        <h2 className="general-header-fonts-normal my-5 text-center">Tell us more about the type of products you are interested in</h2>
           <div className="intered-category">
-            <h4 className="nav-links my-5 text-center">Your interest</h4>
+            <h4 className="general-header-fonts-normal my-5 text-center">Your interest</h4>
             <div className="interested-row row">
               { categories.map(cat => {
                 return <InterestCard key={cat.id} category={cat} interested={true} />

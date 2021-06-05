@@ -9,12 +9,18 @@ body{
   font-family: $body-font-family;
 }
 
+
 .bg-dark-color {
   background: $bg-dark-color;
 }
 
 .bg-shadow-white-color {
   background: $smoke-color;
+}
+
+.general-header-fonts-normal {
+  font-family: $heading-font-family;
+  color: #545353;
 }
 
 .nav-links {
