@@ -17,7 +17,7 @@ const composedEnhancer = compose(
 
 const store = createStore(
   rootReducer, 
-  undefined,
+  undefined, // no preloadedState
   composedEnhancer,
 );
 
