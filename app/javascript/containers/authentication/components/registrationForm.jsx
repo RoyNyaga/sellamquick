@@ -3,6 +3,7 @@ import "antd/dist/antd.css";
 import {
   Form, Input, Button, Checkbox, Select,
 } from "antd";
+import locationInCameroon from "../../../data/locationsInCameroon";
 
 const { Option } = Select;
 
@@ -14,6 +15,22 @@ const RegistrationForm = () => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
+  function onChangeLocationSelect(value) {
+    console.log(`selected ${value}`);
+  }
+
+  function onBlurLocationSelect() {
+    console.log("blur");
+  }
+
+  function onFocusLocationSelect() {
+    console.log("focus");
+  }
+
+  function onSearchLocationSelect(val) {
+    console.log("search:", val);
+  }
 
   const phonePrefixSelector = (
     <Form.Item
@@ -85,12 +102,25 @@ const RegistrationForm = () => {
         rules={[
           {
             required: true,
-            message: "Please select your location",
+            message: "Please select a phone number code",
           },
         ]}
         hasFeedback
       >
-        <Input />
+        <Select
+          showSearch
+          style={{ width: "100%" }}
+          placeholder="Select a person"
+          optionFilterProp="children"
+          onChange={onChangeLocationSelect}
+          onFocus={onFocusLocationSelect}
+          onBlur={onBlurLocationSelect}
+          onSearch={onSearchLocationSelect}
+          filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+        >
+          { locationInCameroon.map((location) => <Option key={location} value={location}>{location}</Option>) }
+
+        </Select>
       </Form.Item>
 
       <Form.Item
