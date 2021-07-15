@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-import axios from "axios";
-import Navbar from "../../components/navbar";
 import InterestCard from "./components/interestCard";
 
 class InterestSurveyPage extends Component {
@@ -12,22 +9,10 @@ class InterestSurveyPage extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.getAllCategories();
-  // }
-
-  // getAllCategories() {
-  //   axios.get("/api/v1/all-categories")
-  //     .then((response) => {
-  //       this.setState({ categories: response.data });
-  //     });
-  // }
-
   render() {
     const { categories } = this.state;
     return (
       <div>
-        <Navbar />
         <div className="interest-page-content container">
           <h2 className="general-header-fonts-normal my-5 text-center">Tell us more about the type of products you are interested in</h2>
           <div className="intered-category">

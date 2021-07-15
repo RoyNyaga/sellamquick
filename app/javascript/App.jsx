@@ -1,16 +1,19 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/navbar";
 import Routing from "./routes/routing";
 
-
-export default function App(){
-
+export default function App() {
   useEffect(() => {
-    console.log("ap has been called")
-  })
+    console.log("app component has been called");
+  });
 
-  return(
+  return (
     <div>
-      <Routing/>
+      <Router>
+        <Navbar />
+        <Routing />
+      </Router>
     </div>
-    )
+  );
 }

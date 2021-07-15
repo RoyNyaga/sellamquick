@@ -1,7 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import {
-  Form, Input, Button, Checkbox, Select,
+  Form, Input, Button, Select,
 } from "antd";
 import locationInCameroon from "../../../data/locationsInCameroon";
 
