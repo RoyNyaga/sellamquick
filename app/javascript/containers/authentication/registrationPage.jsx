@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import RegistrationForm from "./components/registrationForm";
 
-export default function RegistrationPage() {
+function RegistrationPage() {
   return (
     <div className="container-fluid">
       <div className="row">
@@ -12,3 +12,5 @@ export default function RegistrationPage() {
     </div>
   );
 }
+
+export default RegistrationPage;

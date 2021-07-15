@@ -1,35 +1,155 @@
-import React, { useState } from "react";
-import {
-  Form, Input, Button, Radio,
-} from "antd";
-import { InfoCircleOutlined } from "@ant-design/icons";
+import React from "react";
 import "antd/dist/antd.css";
+import {
+  Form, Input, Button, Checkbox, Select,
+} from "antd";
 
-function RegistrationForm() {
-  const [form] = Form.useForm();
+const { Option } = Select;
+
+const RegistrationForm = () => {
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
+  const phonePrefixSelector = (
+    <Form.Item
+      name="phoneNumberCode"
+      noStyle
+      rules={[
+        {
+          required: true,
+          message: "Please select a phone number code",
+        },
+      ]}
+      hasFeedback
+    >
+      <Select
+        style={{
+          width: 100,
+        }}
+      >
+        <Option value="+237">+237</Option>
+      </Select>
+    </Form.Item>
+  );
 
   return (
     <Form
-      form={form}
       layout="vertical"
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
     >
-      <Form.Item label="Field A" required tooltip="This is a required field">
-        <Input placeholder="input placeholder" />
-      </Form.Item>
       <Form.Item
-        label="Field B"
-        tooltip={{
-          title: "Tooltip with customize icon",
-          icon: <InfoCircleOutlined />,
+        label="Full Name"
+        name="name"
+        rules={[
+          {
+            required: true,
+            message: "Full name can not be empty",
+          },
+          ({ getFieldValue }) => ({
+            validator(_, value) {
+              if (value.includes(" ")) {
+                return Promise.resolve();
+              }
+              return Promise.reject(new Error("Please enter at least two of your names"));
+            },
+          }),
+        ]}
+        hasFeedback
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Phone Number"
+        name="phoneNumber"
+        rules={[
+          {
+            required: true,
+            message: "Phone number can not be empty",
+          },
+        ]}
+        hasFeedback
+      >
+        <Input addonBefore={phonePrefixSelector} />
+      </Form.Item>
+
+      <Form.Item
+        label="Location"
+        name="location"
+        rules={[
+          {
+            required: true,
+            message: "Please select your location",
+          },
+        ]}
+        hasFeedback
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Password"
+        name="password"
+        rules={[
+          {
+            required: true,
+            message: "Please input your password!",
+          },
+          ({ getFieldValue }) => ({
+            validator(_, value) {
+              if (value.length >= 8) {
+                return Promise.resolve();
+              }
+              return Promise.reject(new Error("Password can not be less than 8 digits"));
+            },
+          }),
+        ]}
+        hasFeedback
+      >
+        <Input.Password />
+      </Form.Item>
+
+      <Form.Item
+        label="Password Confirmation"
+        name="passwordConfirmation"
+        rules={[
+          {
+            required: true,
+            message: "Please input your password confirmation",
+          },
+          ({ getFieldValue }) => ({
+            validator(_, value) {
+              if (!value || getFieldValue("password") === value) {
+                return Promise.resolve();
+              }
+
+              return Promise.reject(new Error("The two passwords that you entered do not match!"));
+            },
+          }),
+        ]}
+        hasFeedback
+      >
+        <Input.Password />
+      </Form.Item>
+
+      <Form.Item
+        wrapperCol={{
+          offset: 8,
+          span: 16,
         }}
       >
-        <Input placeholder="input placeholder" />
-      </Form.Item>
-      <Form.Item>
-        <Button type="primary">Submit</Button>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
       </Form.Item>
     </Form>
   );
-}
+};
 
 export default RegistrationForm;
