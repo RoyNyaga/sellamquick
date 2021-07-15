@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import RegistrationForm from "./components/registrationForm";
 
 export default function RegistrationPage() {
   return (
-    <div>
-      <h1>how are you</h1>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-4 mx-auto">
+          <RegistrationForm />
+        </div>
+      </div>
     </div>
   );
 }
