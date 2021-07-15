@@ -108,6 +108,7 @@ const RegistrationForm = () => {
         hasFeedback
       >
         <Select
+          autoComplete="none"
           showSearch
           style={{ width: "100%" }}
           placeholder="Select a person"
