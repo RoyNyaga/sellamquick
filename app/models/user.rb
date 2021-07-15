@@ -14,5 +14,13 @@ class User < ApplicationRecord
   validates :location, presence: true
 
   #callbacks
+  after_create :remove_spaces_from_slug
 
+
+
+  private 
+
+  def remove_spaces_from_slug
+    self.slug = name.strip.gsub(" ", "-")
+  end 
 end
