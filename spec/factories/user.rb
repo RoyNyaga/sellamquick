@@ -1,18 +1,11 @@
 FactoryBot.define do
-  factory :name do
-    brand { "MyString" }
-    categories { nil }
-    description { "MyText" }
-    used_state { "MyString" }
-    has_problem { false }
-    problem_statement { "MyString" }
-    price { 1 }
-    is_arguable { false }
-    is_on_promotion { false }
-    promotion_end_date { "MyString" }
-    promotion_price { 1 }
-    available_colors { "MyString" }
-    is_available { false }
-    users { nil }
+  locations = ["Nkoteng Centre Cameroon", "Mokolo Far North Cameroon", "Monatele Centre Cameroon",
+  "Mora Far North Cameroon", "Mouloudou East Cameroon", "Mutengene Southwest Cameroon",
+  "Nanga Eboko Centre Cameroon","Ndu Northwest Cameroon"]
+  factory :user do
+    name { Faker::Name.name }
+    phone { Faker::PhoneNumber.subscriber_number(length: 12) }
+    location { locations.sample }
+    password { Faker::Internet.password(min_length: 8) }
   end
 end
