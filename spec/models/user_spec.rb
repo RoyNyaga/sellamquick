@@ -19,4 +19,8 @@ RSpec.describe User, type: :model do
       end 
     end 
   end 
+
+  context "waiting for next test" do 
+
+  end 
 end
